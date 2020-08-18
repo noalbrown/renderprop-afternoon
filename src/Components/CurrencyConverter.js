@@ -61,10 +61,14 @@ class CurrencyConverter extends Component {
           <button className='add'>+</button>
           <button className='minus'>-</button>
         </div>
-        {this.props.render(
-          currencyData[this.state.selectedCurrency],
-          this.state.amount
-        )}
+        {this.state.currencyChosen ?
+          this.props.render(
+            currencyData[this.state.selectedCurrency],
+            this.state.amount
+          )
+          :
+          <p>Please Select</p>
+        }
       </div>
     )
   }
